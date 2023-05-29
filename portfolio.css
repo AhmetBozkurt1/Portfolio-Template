@@ -27,27 +27,25 @@ a{
     text-decoration: none;
 }
 /* ******************** */
-/* ****HEADER******* */
+/* ****HEADER BASLANGIC******* */
 /* ******************* */
 header{
     background-image: url(/IMAGE/pexels-beyza-kaplan-8134609.jpg);
-    height: 90vh;
+    height: 98vh;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;display: flex;
+    background-size: cover;
+    display: flex;
     justify-content: space-between;
 }
 .side-navbar{
     position: relative;
-}
-.header-nav{
-    height: 90vh;
-    width: 30%;
-    position: fixed;
+    height: 98vh;
+    width: 20%;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
 }
 .navParent-link{
-    padding: 8rem 0 0 7rem;
+    padding: 5rem 0 0 3rem;
 }
 .navParent-link li{
     padding-bottom: 5rem;
@@ -71,14 +69,14 @@ header{
 .navParent-link a:hover::before{
     color: var(--color);
 }
-.navParent-icon ul{
+.navParent-icon{
     position: absolute;
     bottom: 1rem;
-    left: 4rem;
+    left: .8rem;
 }
 .navParent-icon li{
     display: inline-block;
-    margin-right: 3rem;
+    margin-right: 1rem;
 }
 .navParent-icon a{
     font-size: 3rem;
@@ -99,7 +97,7 @@ main{
 .mainText-second{
     font-size: 6rem;
 }
-.mainText button{
+.btn{
     background-color: var(--color);
     padding: 1rem;
     color: #fff;
@@ -109,17 +107,18 @@ main{
     margin-top: 2.5rem;
     transition: color, background-color, border, .4s linear ;
 }
-.mainText button:hover{
+.btn:hover{
     border: 3px solid var(--color);
     background-color: #fff;
     color: var(--color);
 }
 .logo{
-    text-align: center;
+    text-align: start;
 }
 .logo img{
     border-radius: 100%;
-    margin-top: 50px;
+    margin-top: 4rem;
+    margin-left: 3rem;
 }
 /* ***RESPONSİVE ALT MENÜ***** */
 .header-container{
@@ -153,6 +152,111 @@ main{
 }
 /* ***RESPONSİVE ALT MENÜ***** */
 
+/* ******************** */
+/* ****HEADER BITIS******* */
+/* ******************* */
+
+/* ******************** */
+/* ****ABOUT BASLANGIC******* */
+/* ******************* */
+.container{
+    width: 85%;
+    margin: auto;
+}
+.aboutParent{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8rem;
+}
+.aboutCard-first , .aboutCard-second , .aboutCard-third{
+    width: 33%;
+    border: 3px solid rgb(188, 183, 183);
+    margin-right: 2rem;
+    border-radius: 1rem;
+}
+.about-brdrbtm{
+    border-bottom: 3px solid var(--color);
+}
+/* ABOUT CARD FİRST */
+.aboutCard-first{
+    padding: 4rem;
+    position: relative;
+}
+.aboutCard-first h1{
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+.aboutCard-first h3{
+    margin-bottom: 1rem;
+}
+.aboutCard-first i{
+    font-size: 7rem;
+    position: absolute;
+    top: 0px;
+    left: 10%;
+    transform: translateY(-70px);
+    background-color: #fff;
+    color: var(--color);
+}
+/* ABOUT CARD SECOND */
+.aboutCard-second{
+    padding: 4rem;
+    position: relative;
+}
+.aboutCard-second h1{
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+.about-second-list{
+    font-weight: bolder;
+    font-size: 2rem;
+}
+.aboutCard-second li{
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+}
+.aboutCard-second i{
+    font-size: 7rem;
+    position: absolute;
+    top: 0px;
+    left: 10%;
+    transform: translateY(-70px);
+    background-color: #fff;
+    color: var(--color);
+    padding: 0 .7rem;
+}
+/* ABOUT CARD THIRD */
+.aboutCard-third{
+    padding: 4rem;
+    position: relative;
+}
+.aboutCard-third h1{
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+.aboutCard-third li{
+    display: inline-block;
+    padding-bottom: 2rem;
+    font-size: 1.8rem;
+}
+.aboutCard-third li i{
+    font-size: 3rem;
+    color: var(--color);
+}
+.bi-gear{
+    font-size: 7rem;
+    position: absolute;
+    top: 0px;
+    left: 10%;
+    transform: translateY(-70px);
+    background-color: #fff;
+    color: var(--color);
+}
+
+
+
+
 @media(max-width:992px){
     header{
         height: 75vh;
@@ -160,12 +264,11 @@ main{
     .logo img{
         width: 100px;
     }
-    .header-nav{
-        width: 26%;
+    .side-navbar{
         height: 75vh;
     }
     .navParent-link{
-        padding: 8rem 0 0 5rem;
+        padding: 5rem 0 0 2rem;
     }
     .navParent-link a{
         font-size: 1.7rem;
@@ -174,7 +277,7 @@ main{
         font-size: 2rem;
     }
     .navParent-icon li{
-        margin-right: 1.7rem;
+        margin-right: .7rem;
     }
     .navParent-icon ul{
         left: 1.5rem;
