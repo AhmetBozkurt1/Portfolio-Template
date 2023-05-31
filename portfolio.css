@@ -8,7 +8,7 @@
 html{
     font-size: 62.5%;
     scroll-behavior: smooth;
-    height: 2000px;
+    height: 3000px;
 }
 body{
     font-size: 1.6rem;
@@ -190,11 +190,11 @@ main{
     justify-content: space-between;
     margin-top: 10rem;
 }
-.aboutCard-first , .aboutCard-second , .aboutCard-third{
+.aboutCard-first , .aboutCard-second{
     width: 33%;
     border: 3px solid rgb(188, 183, 183);
     margin-right: 2rem;
-    border-radius: 1rem;
+    border-radius: .5rem;
 }
 .about-brdrbtm{
     border-bottom: 3px solid var(--color);
@@ -251,40 +251,12 @@ main{
     padding: 0 .7rem;
 }
 /* ABOUT CARD THIRD */
-/* .aboutCard-third{
-    padding: 4rem;
-    position: relative;
-}
-.aboutCard-third h1{
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    margin-top: 4rem;
-}
-.aboutCard-third li{
-    display: inline-block;
-    padding-bottom: 2rem;
-    font-size: 1.8rem;
-}
-.aboutCard-third li i{
-    font-size: 3rem;
-    color: var(--color);
-}
-.bi-gear{
-    font-size: 7rem;
-    position: absolute;
-    top: 0px;
-    left: 10%;
-    transform: translateY(-30px);
-    background-color: #fff;
-    color: var(--color);
-} */
-
-.article-third{
+.aboutCard-third{
     width: 25%;
     align-self: center;
     position: relative;
 }
-.article-third .article-image-box img{
+.aboutCard-third .aboutCard-image-box img{
     display: block;
     width: 83%;
     height: 100%;
@@ -294,12 +266,12 @@ main{
     transition: transform 2s, filter 1s;
     border-radius: 30px;
 }
-.article-third:hover .article-image-box img{
+.aboutCard-third:hover .aboutCard-image-box img{
     filter: grayscale(.7);
     /* scale: 1; */
     transform: scale(1.1);
 }
-.article-text-box{
+.aboutCard-text-box{
     position: absolute;
     top: 50%;
     left: 40%;
@@ -307,41 +279,41 @@ main{
     text-align: center;
     color: #fff;
 }
-.article-text-box .name{
+.aboutCard-text-box .text-name{
     height: 34px;
     line-height: 34px;
     overflow: hidden;
 }
-.article-text-box .name-2{
+.aboutCard-text-box .text-name2{
     height: 34px;
     line-height: 34px;
     overflow: hidden;
 }
-.name span{
+.text-name span{
     display: block;
     transition: transform .5s ease;
     font-size: 2.2rem;
     color: #222831;
     font-weight: 700;
 }
-.name span{
+.text-name span{
     transition-delay: .2s;
     transform: translateY(100%);
 }
-.name-2 span{
+.text-name2 span{
     display: block;
     transition: transform .5s ease;
     font-size: 2rem;
     font-weight: 500;
 }
-.name-2 span{
+.text-name2 span{
     transition-delay: .2s;
     transform: translateY(-100%);
 }
-.article-third:hover .article-text-box span{
+.aboutCard-third:hover .aboutCard-text-box span{
     transform: translateY(0%);
 }
-.border-image{
+.card-border-image{
     border: 1rem solid var(--color);
     position: absolute;
     top: -60px;
@@ -352,9 +324,121 @@ main{
     z-index: -1;
     transition: transform 2s;
 }
-.article-third:hover .border-image{
+.aboutCard-third:hover .card-border-image{
     transform: scale(.9);
 }
+/* ******************** */
+/* ****ABOUT BITIS******* */
+/* ******************* */
+
+/* ******************** */
+/* ****CONTACT BASLANGIC******* */
+/* ******************* */
+footer{
+    margin-top: 10rem;
+    background-image: linear-gradient(rgba(0, 0, 0, .4) , rgba(0, 0, 0, .4)), url(/IMAGE/GoogleMap.webp);
+    background-position: center;
+    background-size: cover;
+    padding: 7rem;
+
+}
+.footerParent{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-input{
+    width: 60%;
+    background-color: #fff;
+    padding: 5rem;
+}
+.footer-input h1{
+    margin-bottom: 5rem;
+    font-weight: 500;
+}
+.footer-input h1 span{
+    border-bottom: 4px solid var(--color);
+}
+.footer-input form input, textarea{
+    display: block;
+    width: 100%;
+    margin-bottom: 1.8rem;
+    padding: 1.5rem 1.8rem; 
+    font-size: 2rem;
+}
+.footer-input form input:focus{
+    border: 4px solid var(--color);
+    outline: none;
+}
+.footer-input form textarea{
+    font-family: 'Open Sans', sans-serif;;
+}
+.footer-input form textarea:focus{
+    border: 4px solid var(--color);
+    outline: none;
+}
+.footer-input form button{
+    display: block;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: var(--color);
+    transition: background-color .3s linear;
+    border: none;
+}
+.footer-input form button:hover{
+    background-color: rgba(92, 137, 132, .7);
+}
+
+.footer-contact{
+    width: 35%;
+    background-color: #fff;
+    padding: 5rem;
+}
+.footer-contact h1{
+    margin-bottom: 5rem;
+    font-weight: 500;
+}
+.footer-contact h1 span{
+    border-bottom: 4px solid var(--color);
+}
+.footer-contact-info{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+}
+.contact-icon{
+    font-size: 3.5rem;
+    margin-right: 2rem;
+}
+.contact-list-1 {
+    font-weight: bolder;
+    font-size: 2rem;
+}
+.footer-icon{
+    margin-top: 6rem;
+}
+.footer-icon li{
+    display: inline-block;
+    margin-right: 2.5rem;
+}
+.footer-icon li a{
+    font-size: 3.5rem;
+    color: var(--color);
+    transition: opacity .2s linear;
+}
+.footer-icon li:hover a{
+    opacity: .8;
+}
+
+
+
+
+
+
+
+
+
 
 @media(max-width:1324px){
     .border-image{
@@ -369,9 +453,6 @@ main{
         left: -50px;
     }
 }
-
-
-
 @media(max-width:992px){
     header{
         height: 75vh;
@@ -433,7 +514,6 @@ main{
         left: 150px;
     }
 }
-
 @media(max-width:768px){
     nav{
         display: none;
@@ -475,6 +555,12 @@ main{
 }
 @media(max-width:450px){
     .name span , .name-2 span{
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+    }
+    .aboutParent{
+        margin-top: 3rem;
+    }
+    .aboutCard-first{
+        margin-top: -3rem;
     }
 }
