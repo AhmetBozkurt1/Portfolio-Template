@@ -30,7 +30,7 @@ a{
 /* ****HEADER BASLANGIC******* */
 /* ******************* */
 header{
-    background-image: url(/IMAGE/pexels-beyza-kaplan-8134609.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .2) , rgba(0, 0, 0, .7)), url(/IMAGE/pexels-beyza-kaplan-8134609.jpg);
     height: 98vh;
     background-repeat: no-repeat;
     background-position: center;
@@ -55,7 +55,7 @@ header{
     color: #fff;
     font-size: 2.5rem;
     margin-right: .5rem;
-    transition: color .3s linear;
+    transition: color .2s linear;
 }
 .navParent-link a{
     color: #fff;
@@ -72,16 +72,16 @@ header{
 .navParent-icon{
     position: absolute;
     bottom: 1rem;
-    left: .8rem;
+    left: 3rem;
 }
 .navParent-icon li{
-    display: inline-block;
-    margin-right: 1rem;
+    /* display: inline-block; */
+    margin-bottom: .5rem;
 }
 .navParent-icon a{
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #fff;
-    transition: color .3s linear;
+    transition: color .2s linear;
 }
 .navParent-icon a:hover{
     color: var(--color);
@@ -98,19 +98,40 @@ main{
     font-size: 6rem;
 }
 .btn{
-    background-color: var(--color);
+    position: relative;
+    width: 180px;
+    height: 60px;
     padding: 1rem;
-    color: #fff;
+    color: #222831;
+    font-weight: 600;
     border: 3px solid #fff;
-    border-radius: 5px;
+    /* border: none; */
+    border-radius: 15px;
     font-size: 1.8rem;
     margin-top: 2.5rem;
-    transition: color, background-color, border, .4s linear ;
+    z-index: 2;
+    overflow: hidden;
+}
+.btn::before{
+    content: '';
+    width: 0;
+    height: 60px;
+    border-radius: 15px;
+    background-color: var(--color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    transition: border, width, .5s linear ;
+    color: #fff;
+}
+.btn:hover::before{
+    width: 180px;
 }
 .btn:hover{
-    border: 3px solid var(--color);
-    background-color: #fff;
-    color: var(--color);
+    cursor: pointer;
+    outline-color: #fff;
 }
 .logo{
     text-align: start;
@@ -134,9 +155,10 @@ main{
     left: 0;
     width: 100%;
     background-color: var(--color);
-    opacity: .9;
+    /* opacity: .9; */
     height: 67px;
     padding: .6rem .3rem;
+    z-index: 99;
 }
 .header-first{
     text-align: center;
@@ -166,7 +188,7 @@ main{
 .aboutParent{
     display: flex;
     justify-content: space-between;
-    margin-top: 8rem;
+    margin-top: 10rem;
 }
 .aboutCard-first , .aboutCard-second , .aboutCard-third{
     width: 33%;
@@ -184,17 +206,18 @@ main{
 }
 .aboutCard-first h1{
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    margin-top: 4rem;
 }
 .aboutCard-first h3{
     margin-bottom: 1rem;
 }
 .aboutCard-first i{
-    font-size: 7rem;
+    font-size: 7rem; 
     position: absolute;
     top: 0px;
     left: 10%;
-    transform: translateY(-70px);
+    transform: translateY(-30px);
     background-color: #fff;
     color: var(--color);
 }
@@ -205,7 +228,8 @@ main{
 }
 .aboutCard-second h1{
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    margin-top: 4rem;
 }
 .about-second-list{
     font-weight: bolder;
@@ -221,19 +245,20 @@ main{
     position: absolute;
     top: 0px;
     left: 10%;
-    transform: translateY(-70px);
+    transform: translateY(-30px);
     background-color: #fff;
     color: var(--color);
     padding: 0 .7rem;
 }
 /* ABOUT CARD THIRD */
-.aboutCard-third{
+/* .aboutCard-third{
     padding: 4rem;
     position: relative;
 }
 .aboutCard-third h1{
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    margin-top: 4rem;
 }
 .aboutCard-third li{
     display: inline-block;
@@ -249,11 +274,101 @@ main{
     position: absolute;
     top: 0px;
     left: 10%;
-    transform: translateY(-70px);
+    transform: translateY(-30px);
     background-color: #fff;
     color: var(--color);
+} */
+
+.article-third{
+    width: 25%;
+    align-self: center;
+    position: relative;
+}
+.article-third .article-image-box img{
+    display: block;
+    width: 83%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+    filter: grayscale(0);
+    transition: transform 2s, filter 1s;
+    border-radius: 30px;
+}
+.article-third:hover .article-image-box img{
+    filter: grayscale(.7);
+    /* scale: 1; */
+    transform: scale(1.1);
+}
+.article-text-box{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    color: #fff;
+}
+.article-text-box .name{
+    height: 34px;
+    line-height: 34px;
+    overflow: hidden;
+}
+.article-text-box .name-2{
+    height: 34px;
+    line-height: 34px;
+    overflow: hidden;
+}
+.name span{
+    display: block;
+    transition: transform .5s ease;
+    font-size: 2.2rem;
+    color: #222831;
+    font-weight: 700;
+}
+.name span{
+    transition-delay: .2s;
+    transform: translateY(100%);
+}
+.name-2 span{
+    display: block;
+    transition: transform .5s ease;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.name-2 span{
+    transition-delay: .2s;
+    transform: translateY(-100%);
+}
+.article-third:hover .article-text-box span{
+    transform: translateY(0%);
+}
+.border-image{
+    border: 1rem solid var(--color);
+    position: absolute;
+    top: -60px;
+    left: -70px;
+    width: 300px;
+    height: 400px;
+    border-radius: 30px;
+    z-index: -1;
+    transition: transform 2s;
+}
+.article-third:hover .border-image{
+    transform: scale(.9);
 }
 
+@media(max-width:1324px){
+    .border-image{
+        width: 250px;
+        height: 350px;
+    }
+}
+@media(max-width:1155px){
+    .border-image{
+        width: 200px;
+        height: 300px;
+        left: -50px;
+    }
+}
 
 
 
@@ -288,7 +403,37 @@ main{
     .mainText-second{
         font-size: 5rem;
     }
+    .aboutParent{
+        flex-direction: column;
+    }
+    .aboutParent article{
+        width: 100%;
+        margin-bottom: 72px;
+        text-align: center;
+    }
+    .article-third .article-image-box img{
+        width: 40%;
+        margin: auto;
+    }
+    .article-text-box{
+        left: 50%;
+        font-size: 2rem;
+    }
+    .border-image{
+        width: 400px;
+        height: 500px;
+        left: 150px;
+        top: -80px;
+    }
 }
+@media(max-width:905px){
+    .border-image{
+        width: 300px;
+        height: 450px;
+        left: 150px;
+    }
+}
+
 @media(max-width:768px){
     nav{
         display: none;
@@ -304,5 +449,32 @@ main{
     }
     .mainText-second{
         font-size: 4rem;
+    }
+    .aboutParent article{
+        padding: 1.5rem;
+    }
+    .aboutParent article h1{
+        font-size: 2.5rem;
+        margin-top: 3rem;
+    }
+    .aboutParent article i{
+        font-size: 4.3rem;
+        transform: translateY(-30px);
+    }
+    .border-image{
+        width: 220px;
+        height: 350px;
+        top: -40px;
+        left: 130px;
+    }
+}
+@media(max-width:658px){
+    .border-image{
+        display: none;
+    }
+}
+@media(max-width:450px){
+    .name span , .name-2 span{
+        font-size: 1.5rem;
     }
 }
