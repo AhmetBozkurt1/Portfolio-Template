@@ -115,7 +115,7 @@ main{
 .btn::before{
     content: '';
     width: 0;
-    height: 60px;
+    height: 54px;
     border-radius: 15px;
     background-color: var(--color);
     position: absolute;
@@ -123,7 +123,7 @@ main{
     left: 0;
     z-index: -1;
     display: block;
-    transition: border, width, .5s linear ;
+    transition: width, .5s linear ;
     color: #fff;
 }
 .btn:hover::before{
@@ -131,7 +131,6 @@ main{
 }
 .btn:hover{
     cursor: pointer;
-    outline-color: #fff;
 }
 .logo{
     text-align: start;
@@ -194,7 +193,7 @@ main{
     width: 33%;
     border: 3px solid rgb(188, 183, 183);
     margin-right: 2rem;
-    border-radius: .5rem;
+    border-radius: 3rem;
 }
 .about-brdrbtm{
     border-bottom: 3px solid var(--color);
@@ -213,13 +212,16 @@ main{
     margin-bottom: 1rem;
 }
 .aboutCard-first i{
-    font-size: 7rem; 
+    font-size: 7rem;
     position: absolute;
-    top: 0px;
+    top: -30px;
     left: 10%;
-    transform: translateY(-30px);
     background-color: #fff;
     color: var(--color);
+    transition: transform .4s linear;
+}
+.aboutCard-first:hover i{
+    transform: translateY(-45px);
 }
 /* ABOUT CARD SECOND */
 .aboutCard-second{
@@ -243,12 +245,15 @@ main{
 .aboutCard-second i{
     font-size: 7rem;
     position: absolute;
-    top: 0px;
+    top: -30px;
     left: 10%;
-    transform: translateY(-30px);
     background-color: #fff;
     color: var(--color);
     padding: 0 .7rem;
+    transition: transform .4s linear;
+}
+.aboutCard-second:hover i{
+    transform: translateY(-45px);
 }
 /* ABOUT CARD THIRD */
 .aboutCard-third{
@@ -313,6 +318,9 @@ main{
 .aboutCard-third:hover .aboutCard-text-box span{
     transform: translateY(0%);
 }
+.aboutCard-image-box{
+    position: relative;
+}
 .card-border-image{
     border: 1rem solid var(--color);
     position: absolute;
@@ -362,7 +370,7 @@ footer{
     display: block;
     width: 100%;
     margin-bottom: 1.8rem;
-    padding: 1.5rem 1.8rem; 
+    padding: 1.5rem 1.8rem;
     font-size: 2rem;
 }
 .footer-input form input:focus{
@@ -415,13 +423,15 @@ footer{
     font-weight: bolder;
     font-size: 2rem;
 }
-.footer-icon{
+.footer-icon ul{
     margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
 }
-.footer-icon li{
+/* .footer-icon li{
     display: inline-block;
     margin-right: 2.5rem;
-}
+} */
 .footer-icon li a{
     font-size: 3.5rem;
     color: var(--color);
@@ -430,6 +440,78 @@ footer{
 .footer-icon li:hover a{
     opacity: .8;
 }
+/* ******************** */
+/* ****CONTACT BITIS******* */
+/* ******************* */
+
+/* ******************** */
+/* ****PORTFOLIO BASLANGIC******* */
+/* ******************* */
+section{
+    margin-top: 10rem;
+}
+.baslik-first{
+    background-color: var(--color);
+    display: inline-block;
+    color: #fff;
+    padding: 1.2rem 3rem; 
+    border-radius: 30px 0 60px 30px;
+}
+.port-baslik-list{
+    margin-top: 3rem;
+}
+.port-baslik-list ul{
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+}
+.port-baslik-list li{
+        padding: .5rem 1rem;
+        border-radius: 30px;
+        transition: background-color .3s linear;
+        background-color: var(--color);
+        box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color);
+}
+.port-baslik-list li:hover{
+    background-color: #fff;
+}
+.port-baslik-list li:hover a{
+    color: var(--color);
+}
+.port-baslik-list a{
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 700;
+        transition: color .3s linear;
+}
+.port-image{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+.port-image-item{
+    width: 300px;
+    position: relative;
+    left: 40px;
+    transition: all .3s linear;
+    
+}
+.port-image-item img{
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.port-image-item:not(:first-child){
+    margin-left: -55px;
+}
+.port-image-item:hover{
+    transform: translateY(-20px);
+}
+.port-image-item:hover ~ .port-image-item{
+    left: 100px;
+}
+
+
 
 
 
@@ -441,13 +523,13 @@ footer{
 
 
 @media(max-width:1324px){
-    .border-image{
+    .card-border-image{
         width: 250px;
         height: 350px;
     }
 }
 @media(max-width:1155px){
-    .border-image{
+    .card-border-image{
         width: 200px;
         height: 300px;
         left: -50px;
@@ -492,23 +574,48 @@ footer{
         margin-bottom: 72px;
         text-align: center;
     }
-    .article-third .article-image-box img{
+    .aboutCard-third .aboutCard-image-box img{
         width: 40%;
         margin: auto;
     }
-    .article-text-box{
+    .aboutCard-text-box{
         left: 50%;
         font-size: 2rem;
     }
-    .border-image{
+    .card-border-image{
         width: 400px;
         height: 500px;
         left: 150px;
         top: -80px;
     }
+    footer{
+        padding: 1rem 2rem;
+        margin-top: 0;
+    }
+    .footerParent{
+        display: block;
+    }
+    .footer-input{
+        width: 100%;
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+        padding: 3rem;
+    }
+    .footer-contact{
+        width: 100%;
+        padding: 3rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }.footer-contact-info{
+        justify-content: center;
+    }
+    .footer-icon ul{
+        justify-content: center;
+        gap: 3rem;
+    }
 }
 @media(max-width:905px){
-    .border-image{
+    .card-border-image{
         width: 300px;
         height: 450px;
         left: 150px;
@@ -538,24 +645,47 @@ footer{
         margin-top: 3rem;
     }
     .aboutParent article i{
-        font-size: 4.3rem;
-        transform: translateY(-30px);
+        font-size: 5rem;
     }
-    .border-image{
-        width: 220px;
-        height: 350px;
-        top: -40px;
-        left: 130px;
+    .aboutCard-first:hover i{
+        transform: translateY(-20px);
     }
-}
-@media(max-width:658px){
-    .border-image{
+    .aboutCard-second:hover i{
+        transform: translateY(-20px);
+    }
+    .card-border-image{
         display: none;
     }
+    footer{
+        padding: 1rem 0;
+    }
+    .footer-input{
+        width: 100%;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+    .footer-contact{
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        /* text-align: center; */
+    }
+    .footer-contact-info{
+        justify-content: center;
+    }
+    .footer-icon ul{
+        justify-content: center;
+        gap: 3rem;
+    }
+    
 }
 @media(max-width:450px){
-    .name span , .name-2 span{
+    .text-name span{
         font-size: 1.6rem;
+    }
+    .text-name2 span{
+        font-size: 1.5rem;
     }
     .aboutParent{
         margin-top: 3rem;
