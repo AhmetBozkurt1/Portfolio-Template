@@ -42,7 +42,16 @@ header{
     position: relative;
     height: 98vh;
     width: 20%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(transparent , rgba(0, 0, 0, 0.8));
+    /* burada gradinentte transparan görünüm elde ettim */
+}
+.logo{
+    text-align: start;
+}
+.logo img{
+    border-radius: 100%;
+    margin-top: 4rem;
+    margin-left: 3rem;
 }
 .navParent-link{
     padding: 5rem 0 0 3rem;
@@ -55,8 +64,9 @@ header{
     color: #fff;
     font-size: 2.5rem;
     margin-right: .5rem;
-    transition: color .2s linear;
+    transition: color .3s linear;
 }
+/* a önündeki before ları content içerisine hex değeri ile getirdim */
 .navParent-link a{
     color: #fff;
     font-size: 2rem;
@@ -66,6 +76,7 @@ header{
 .navParent-link a:hover{
     color: var(--color);
 }
+/* a hover olduğumda iconlar değişmiyordu a hover olduğunda before da renk tanımladım */
 .navParent-link a:hover::before{
     color: var(--color);
 }
@@ -74,6 +85,7 @@ header{
     bottom: 1rem;
     left: 3rem;
 }
+/* dikey olarak durması için inline-block olmaktan çıkardım */
 .navParent-icon li{
     /* display: inline-block; */
     margin-bottom: .5rem;
@@ -86,6 +98,7 @@ header{
 .navParent-icon a:hover{
     color: var(--color);
 }
+/* align-self ile dikeyde hizaladım */
 main{
     align-self: center;
     margin-right: 5rem;
@@ -97,6 +110,9 @@ main{
 .mainText-second{
     font-size: 6rem;
 }
+/* relative vermemizin sebebi before u buton içine yerleştirmek */
+/* overflow kullanmazsak taşan kısımlar gösterilir */
+/* z-index değerleri verilmesi buton her zaman üstte görünmesiiçin before dan */
 .btn{
     position: relative;
     width: 180px;
@@ -112,6 +128,9 @@ main{
     z-index: 2;
     overflow: hidden;
 }
+/* ilk olarak width vermiyoruz çünkü hover olunca hepsini kaplayacak butonun */
+/* absolute ile boton içinde before konumlandırıyoruz */
+/* block yapıyoruz ki bulunduğu alanı kaplasın */
 .btn::before{
     content: '';
     width: 0;
@@ -126,19 +145,12 @@ main{
     transition: width, .5s linear ;
     color: #fff;
 }
+/* hover olduğunda width değerini buton width kadar ayarlıyoruz */
 .btn:hover::before{
     width: 180px;
 }
 .btn:hover{
     cursor: pointer;
-}
-.logo{
-    text-align: start;
-}
-.logo img{
-    border-radius: 100%;
-    margin-top: 4rem;
-    margin-left: 3rem;
 }
 /* ***RESPONSİVE ALT MENÜ***** */
 .header-container{
@@ -211,6 +223,8 @@ main{
 .aboutCard-first h3{
     margin-bottom: 1rem;
 }
+/* card üstüne absolute ile icon konumlandırdım ve carda hover olunca translate ile yukarı kaydırdım */
+/* border kesilmiş gibi görünmesi için background beyaz rengi vererek çözdüm */
 .aboutCard-first i{
     font-size: 7rem;
     position: absolute;
@@ -261,6 +275,9 @@ main{
     align-self: center;
     position: relative;
 }
+/* block yapmamın sebebi küçük bir oynama kazandırdım */
+/* filter imageler üzerinde oynama etiketi grayscale siyah beyaz görünüm */
+/* ilk baş 1 den büyük scale değeri vererek hem büyük durmasını hemde hover olduğunda küçülmesini sağladım */
 .aboutCard-third .aboutCard-image-box img{
     display: block;
     width: 83%;
@@ -276,6 +293,7 @@ main{
     /* scale: 1; */
     transform: scale(1.1);
 }
+/* burada yazıları image üzerinde transform ile ortaladım flex ile de yapılabilir */
 .aboutCard-text-box{
     position: absolute;
     top: 50%;
@@ -284,6 +302,7 @@ main{
     text-align: center;
     color: #fff;
 }
+/*  isim alanlarına belli yükseklik vererek translate olayı için başlama noktası gibi belirttim*/
 .aboutCard-text-box .text-name{
     height: 34px;
     line-height: 34px;
@@ -301,6 +320,7 @@ main{
     color: #222831;
     font-weight: 700;
 }
+/* gecikme ekledim hover olunca ve y ekseninde kaydırdım */
 .text-name span{
     transition-delay: .2s;
     transform: translateY(100%);
@@ -315,6 +335,7 @@ main{
     transition-delay: .2s;
     transform: translateY(-100%);
 }
+/* carda hover olunca başlangıç noktalarına gelmesi için */
 .aboutCard-third:hover .aboutCard-text-box span{
     transform: translateY(0%);
 }
@@ -332,11 +353,140 @@ main{
     z-index: -1;
     transition: transform 2s;
 }
+/* image-card ile aynı anda küçülüp büyümesi için hover scale verdim */
 .aboutCard-third:hover .card-border-image{
     transform: scale(.9);
 }
 /* ******************** */
 /* ****ABOUT BITIS******* */
+/* ******************* */
+
+/* ******************** */
+/* ****PORTFOLIO BASLANGIC******* */
+/* ******************* */
+.portfolio{
+    margin-top: 10rem;
+}
+.baslik-first{
+    background-color: var(--color);
+    display: inline-block;
+    color: #fff;
+    padding: 1.2rem 3rem;
+    border-radius: 30px 5px 60px 30px;
+    transition: border-radius .3s linear;
+}
+.baslik-first:hover{
+    border-radius: 5px 60px 5px 60px;
+}
+.port-baslik-list{
+    margin-top: 3rem;
+}
+.port-baslik-list ul{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+.port-baslik-list li{
+    padding: .5rem 1rem;
+    border-radius: 30px;
+    transition: background-color .3s linear;
+    background-color: var(--color);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color);
+}
+/* yukarıdaki box-shadow yazımı buton çevresinde ayrı bir border oluşturmak için kullandım */
+.port-baslik-list li:hover{
+    background-color: #fff;
+}
+.port-baslik-list li:hover a{
+    color: var(--color);
+}
+.port-baslik-list a{
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 700;
+        transition: color .3s linear;
+}
+.list-icon{
+    display: none;
+}
+.list-icon span{
+    font-size: 4rem;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    transition: color , background-color .3s linear;
+    background-color: var(--color);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color);
+    color: #fff;
+}
+.list-icon span:hover{
+    background-color: #fff;
+    color: var(--color);
+}
+/* ilk olarak normal gap değeri verdim fakat bölüm yüksekliklerinde kaymlar oldu daha sonra sorunu sütunlar arasına aralık verme yolu ile hallettim */
+.port-image{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    column-gap: 2rem;
+}
+.port-width-2{
+    width: 25%;
+}
+.port-width{
+    width: 50%;
+    position: relative;
+}
+/* burada da aynı şekilde boyutlarda oynama olunca flex yapı yaptım ve row-gap kullandım */
+.port-image-item{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.port-image-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.port-content{
+    position: relative;
+}
+.port-content img{
+    width: 100%;
+    height: 100%;
+}
+/* image üzerinde textleriabsolutr ile konumlandırdım flex yapı vermemin sebebi textleri image üzerinde tam konumlandırmak vermediğim zaman textler kayıyor */
+/* burada imageler üzerine background rengi verdim ve metinler yazıyor fakat ilk olarak bunların gözükmemesi hover olunca gözükmesi için opacity değerlerini sıfırladım hover olunca opacity 1 yaptım */
+.port-content-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(92, 137, 132, .7);
+    text-align: center;
+    opacity: 0;
+    transition: opacity .3s linear;
+}
+.port-text{
+    font-size: 2.5rem;
+    color: #fff;
+}
+.port-item1:hover .port-opacity-1{
+    opacity: 1;
+}
+.port-item2:hover .port-opacity-2{
+    opacity: 1;
+}
+.port-item3:hover .port-opacity-3{
+    opacity: 1;
+}
+/* ******************** */
+/* ****PORTFOLIO BITIS******* */
 /* ******************* */
 
 /* ******************** */
@@ -410,6 +560,7 @@ footer{
 .footer-contact h1 span{
     border-bottom: 4px solid var(--color);
 }
+/* burada iconlar ile bilgiler yanya gelmesi için flex kullandım  */
 .footer-contact-info{
     display: flex;
     justify-content: flex-start;
@@ -444,125 +595,6 @@ footer{
 /* ****CONTACT BITIS******* */
 /* ******************* */
 
-/* ******************** */
-/* ****PORTFOLIO BASLANGIC******* */
-/* ******************* */
-.portfolio{
-    margin-top: 10rem;
-}
-.baslik-first{
-    background-color: var(--color);
-    display: inline-block;
-    color: #fff;
-    padding: 1.2rem 3rem;
-    border-radius: 30px 5px 60px 30px;
-    transition: border-radius .3s linear;
-}
-.baslik-first:hover{
-    border-radius: 5px 60px 5px 60px;
-}
-.port-baslik-list{
-    margin-top: 3rem;
-}
-.port-baslik-list ul{
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-}
-.port-baslik-list li{
-    padding: .5rem 1rem;
-    border-radius: 30px;
-    transition: background-color .3s linear;
-    background-color: var(--color);
-    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color);
-}
-.port-baslik-list li:hover{
-    background-color: #fff;
-}
-.port-baslik-list li:hover a{
-    color: var(--color);
-}
-.port-baslik-list a{
-        color: #fff;
-        font-size: 1.7rem;
-        font-weight: 700;
-        transition: color .3s linear;
-}
-.list-icon{
-    display: none;
-}
-.list-icon span{
-    font-size: 4rem;
-    padding: .5rem 1rem;
-    border-radius: 10px;
-    transition: color , background-color .3s linear;
-    background-color: var(--color);
-    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color);
-    color: #fff;
-}
-.list-icon span:hover{
-    background-color: #fff;
-    color: var(--color);
-}
-.port-image{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4rem;
-    column-gap: 2rem;
-}
-.port-width-2{
-    width: 25%;
-}
-.port-width{
-    width: 50%;
-    position: relative;
-}
-.port-image-item{
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-}
-.port-image-item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.port-content{
-    position: relative;
-}
-.port-content img{
-    width: 100%;
-    height: 100%;
-}
-.port-content-text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(92, 137, 132, .7);
-    text-align: center;
-    opacity: 0;
-    transition: opacity .3s linear;
-}
-.port-text{
-    font-size: 2.5rem;
-    color: #fff;
-}
-.port-item1:hover .port-opacity-1{
-    opacity: 1;
-}
-.port-item2:hover .port-opacity-2{
-    opacity: 1;
-}
-.port-item3:hover .port-opacity-3{
-    opacity: 1;
-}
 
 
 
