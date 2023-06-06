@@ -447,7 +447,7 @@ footer{
 /* ******************** */
 /* ****PORTFOLIO BASLANGIC******* */
 /* ******************* */
-section{
+.portfolio{
     margin-top: 10rem;
 }
 .baslik-first{
@@ -465,16 +465,16 @@ section{
     margin-top: 3rem;
 }
 .port-baslik-list ul{
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
 }
 .port-baslik-list li{
-        padding: .5rem 1rem;
-        border-radius: 30px;
-        transition: background-color .3s linear;
-        background-color: var(--color);
-        box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color);
+    padding: .5rem 1rem;
+    border-radius: 30px;
+    transition: background-color .3s linear;
+    background-color: var(--color);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color);
 }
 .port-baslik-list li:hover{
     background-color: #fff;
@@ -488,30 +488,52 @@ section{
         font-weight: 700;
         transition: color .3s linear;
 }
+.list-icon{
+    display: none;
+}
+.list-icon span{
+    font-size: 4rem;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    transition: color , background-color .3s linear;
+    background-color: var(--color);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color);
+    color: #fff;
+}
+.list-icon span:hover{
+    background-color: #fff;
+    color: var(--color);
+}
 .port-image{
     display: flex;
     justify-content: space-between;
     margin-top: 4rem;
-    gap: 1.5rem;
+    column-gap: 2rem;
 }
 .port-width-2{
     width: 25%;
 }
 .port-width{
     width: 50%;
+    position: relative;
+}
+.port-image-item{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
 }
 .port-image-item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.port-content img{
-    width: 100%;
-    max-height: 100%;
-}
+
 .port-content{
     position: relative;
-    margin-bottom: .7rem;
+}
+.port-content img{
+    width: 100%;
+    height: 100%;
 }
 .port-content-text{
     position: absolute;
@@ -532,7 +554,13 @@ section{
     font-size: 2.5rem;
     color: #fff;
 }
-.port-image-item:hover .port-opacity-1{
+.port-item1:hover .port-opacity-1{
+    opacity: 1;
+}
+.port-item2:hover .port-opacity-2{
+    opacity: 1;
+}
+.port-item3:hover .port-opacity-3{
     opacity: 1;
 }
 
@@ -641,6 +669,20 @@ section{
         justify-content: center;
         gap: 3rem;
     }
+    .port-image{
+        display: block;
+    }
+    .port-image-item{
+        flex-direction: row;
+        margin-bottom: 3rem;
+        column-gap: 2rem;
+    }
+    .port-width{
+        width: 100%;
+    }
+    .port-width-2{
+        width: 100%;
+    }
 }
 @media(max-width:905px){
     .card-border-image{
@@ -650,6 +692,9 @@ section{
     }
 }
 @media(max-width:768px){
+    .container{
+        width: 93%;
+    }
     nav{
         display: none;
     }
@@ -707,7 +752,37 @@ section{
         justify-content: center;
         gap: 3rem;
     }
-    
+    .port-baslik{
+        text-align: center;
+        position: relative;
+    }
+    .port-baslik-list ul{
+        display: none;
+    }
+    .list-icon{
+        display: block;
+        text-align: center;
+    }
+    .portfolio{
+        margin-top: 0;
+    }
+    .port-image-item{
+        display: block;
+        margin-bottom: .5rem;
+    }
+    .responsive .port-baslik-list ul{
+        display: block;
+        margin-top: 12rem;
+    }
+    .responsive .port-baslik-list li{
+        margin-bottom: 2rem;
+    }
+    .responsive .list-icon{
+        display: block;
+        position: absolute;
+        top: 93px;
+        left: 320px;
+    }
 }
 @media(max-width:450px){
     .text-name span{
@@ -724,5 +799,11 @@ section{
     }
     #about{
         margin-top: 1rem;
+    }
+    .responsive .list-icon{
+        display: block;
+        position: absolute;
+        top: 93px;
+        left: 144px;
     }
 }

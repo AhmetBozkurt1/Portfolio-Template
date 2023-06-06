@@ -9,16 +9,16 @@
 </head>
 <body>
     <!-- HEADER BASLANIC -->
-    <header>
+    <header id="home">
         <nav class="side-navbar">
             <div class="logo">
                 <img width="150px" src="/IMAGE/Frond end Developer.jpg" alt="">
             </div>
             <div class="navParent-link">
                 <ul>
-                    <li class="navParent-link-item"><a href="#">HOME</a></li>
+                    <li class="navParent-link-item"><a href="#home">HOME</a></li>
                     <li class="navParent-link-item"><a href="#about">ABOUT</a></li>
-                    <li class="navParent-link-item"><a href="#">PORTFOLIA</a></li>
+                    <li class="navParent-link-item"><a href="#portfolio">PORTFOLIA</a></li>
                     <li class="navParent-link-item"><a href="#contact">CONTACT</a><li>
                 </ul>
             </div>
@@ -60,7 +60,7 @@
                 <ul>
                     <li><i class="bi bi-house icon
                         "></i></li>
-                    <li><a href="">HOME</a></li>
+                    <li><a href="#home">HOME</a></li>
                 </ul>
             </div>
             <div class="header-first">
@@ -74,7 +74,7 @@
                 <ul>
                     <li><i class="bi bi-person-workspace icon
                         "></i></li>
-                    <li><a href="">PORTFOLIA</a></li>
+                    <li><a href="#portfolio">PORTFOLIA</a></li>
                 </ul>
             </div>
             <div class="header-first">
@@ -129,9 +129,9 @@
     <!-- ABOUT BITIS -->
     
     <!-- PORTFOLIO BASLANGIC -->
-    <section>
+    <section id="portfolio" class="portfolio">
         <div class="container">
-            <div class="port-baslik">
+            <div class="port-baslik responsive" id="port-js">
                 <h1 class="baslik-first">MY PORTFOLIO</h1>
                 <div class="port-baslik-list">
                     <ul>
@@ -141,39 +141,61 @@
                         <li><a href="">BLOG</a></li>
                         <li><a href="">GRAPHIC</a></li>
                     </ul>
+                    <div onclick="displayMenü()" class="list-icon">
+                        <span><i class="bi bi-list-nested"></i></span>
+                    </div>
                 </div>
             </div>
             <article class="port-image">
-                <div class="port-image-item port-width">
+                <div class="port-image-item port-width port-item3">
                     <img src="/IMAGE/design.jpg" alt="">
-                </div>
-                <div class="port-image-item port-width-2">
-                    <div class="port-image-future">
-                        <div class="port-content">
-                            <img src="/IMAGE/blog.jpg" alt="">
-                            <div class="port-content-text port-opacity-1">
-                                <div class="port-text">
-                                    <h1>BLOG</h1>
-                                    <p>BLOG TEXT</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="port-content">
-                            <img src="/IMAGE/template.jpg" alt="">
-                            <div class="port-content-text port-opacity-2">
-                                <div class="port-text">
-                                    <h1>TEMPLATE</h1>
-                                    <p>TEMPLATE TEXT</p>
-                                </div>
-                            </div>
+                    <div class="port-content-text port-opacity-3">
+                        <div class="port-text">
+                            <h1>DESIGN</h1>
+                            <p>DESIGN WORKING</p>
                         </div>
                     </div>
                 </div>
                 <div class="port-image-item port-width-2">
-                    <div class="port-image-future">
+                    <div class="port-content port-item1">
+                        <img src="/IMAGE/blog.jpg" alt="">
+                        <div class="port-content-text port-opacity-1">
+                            <div class="port-text">
+                                <h1>BLOG</h1>
+                                <p>BLOG TEXT</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="port-content port-item2">
+                        <img src="/IMAGE/template.jpg" alt="">
+                        <div class="port-content-text port-opacity-2">
+                            <div class="port-text">
+                                <h1>TEMPLATE</h1>
+                                <p>TEMPLATE TEXT</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="port-image-item port-width-2">
+                    <div class="port-content port-item1">
                         <img src="/IMAGE/graphic.jpg" alt="">
-                        <img src="/IMAGE/seo.jpg" alt="">
+                        <div class="port-content-text port-opacity-1">
+                            <div class="port-text">
+                                <h1>GRAPHIC</h1>
+                                <p>GRAPHIC EXAMPLE </p>
+                            </div>
+                        </div>
                     </div>
+                    <div class="port-content port-item2">
+                        <img src="/IMAGE/seo.jpg" alt="">
+                        <div class="port-content-text port-opacity-2">
+                            <div class="port-text">
+                                <h1>SEO</h1>
+                                <p>SEO WORKING </p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </article>
         </div>
@@ -240,7 +262,13 @@
     </footer>
         <!-- CONTACT BITIS -->
 
-    
+<script>
+    function displayMenü (){
+        var link = document.getElementById("port-js");
+        link.classList.toggle("responsive");
+    }
+</script>
+
 <script src="https://kit.fontawesome.com/a09e04a105.js" crossorigin="anonymous"></script>
 </body>
 </html>
