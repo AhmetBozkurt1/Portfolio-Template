@@ -30,7 +30,7 @@ a{
 /* ****HEADER BASLANGIC******* */
 /* ******************* */
 header{
-    background-image: linear-gradient(rgba(0, 0, 0, .2) , rgba(0, 0, 0, .7)), url(/IMAGE/pexels-beyza-kaplan-8134609.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .2) , rgba(0, 0, 0, .7)), url(IMAGE/pexels-beyza-kaplan-8134609.jpg);
     height: 98vh;
     background-repeat: no-repeat;
     background-position: center;
@@ -494,7 +494,7 @@ main{
 /* ******************* */
 footer{
     margin-top: 10rem;
-    background-image: linear-gradient(rgba(0, 0, 0, .4) , rgba(0, 0, 0, .4)), url(/IMAGE/GoogleMap.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, .4) , rgba(0, 0, 0, .4)), url(IMAGE/GoogleMap.webp);
     background-position: center;
     background-size: cover;
     padding: 7rem;
